@@ -26,7 +26,8 @@
       <div class="container">
         <div class="d-flex vh-100 justify-content-center align-items-center">
           <div
-            class="d-flex flex-column justify-content-between align-items-center mobile-layout"
+            class="d-flex flex-column justify-content-between align-items-center mobile-layout background"
+            id="m-layout"
           >
             <div class="d-flex justify-content-between top-header">
               <div class="time">12:00</div>
@@ -37,13 +38,23 @@
                 <i class="fa-solid fa-battery-three-quarters"></i>
               </div>
             </div>
-            <div class="main"></div>
+            <div class="main d-flex justify-content-center pt-3" id="main">
+              <div id="contactlist" class="non-display" onclick="showContact()">
+                <div
+                  class="contactlist d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-regular fa-address-card fa-2xl"></i>
+                </div>
+                <div>Contact</div>
+              </div>
+            </div>
             <div
-              class="d-flex justify-content-center gap-4 align-items-center shadow-lg p-3 mb-5 bg-body-tertiary rounded slide"
+              class="slides d-flex justify-content-center gap-4 align-items-center"
               id="slide"
+              onclick="slideUnlock()"
             >
               <i class="fa-solid fa-chevron-right"></i>
-              <span>Slide to Unlock</span>
+              <span>Slide to unlock</span>
             </div>
           </div>
         </div>

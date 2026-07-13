@@ -18,15 +18,18 @@ body {
   height: 700px;
   border: 5px solid black;
   border-radius: 25px;
-  background-image: url("././assists/images/mobile-1.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   color: white;
   padding-top: 2%;
   padding-bottom: 2%;
   position: relative;
 }
+.background {
+  background-image: url("././assists/images/mobile-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .top-header {
   width: 100%;
   padding: 10px;
@@ -38,20 +41,41 @@ body {
   border-radius: 999px;
 }
 .main {
-  /* border: 1px solid black; */
-  width: 95%;
+  width: 100%;
   height: 100%;
+  /* background-color: gray; */
 }
-.slide {
+.main.active {
+  background-color: gray;
+}
+.slides {
   position: absolute;
   top: 80%;
   width: 95%;
   height: 50px;
   color: black;
   background-color: white;
-  border-radius: 25px; /* make it pill shaped */
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
-.slide > *:hover {
+.slides > *:hover {
   color: purple;
   cursor: pointer;
+}
+.slides:hover {
+  background-color: wheat;
+}
+
+.contactlist {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  color: red;
+}
+#contactlist {
+  cursor: pointer;
+}
+.non-display {
+  display: none;
 }
