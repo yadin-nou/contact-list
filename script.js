@@ -672,15 +672,15 @@ const displayUser = async () => {
                             <i class="fa-solid fa-circle-user"></i> ${first} ${last}
                           </div>
                           <div>
-                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+                            <a href="tel:${phone}"><i class="fa-solid fa-phone"></i></a>
                             ${phone}
                           </div>
                           <div>
-                            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="mailto:${email}"><i class="fa-solid fa-envelope"></i></a>
                             ${email}
                           </div>
                           <div>
-                            <a href="#"
+                            <a href="https://www.google.com/maps?q=${user.location.coordinates.latitude},${user.location.coordinates.longitude}" target="_blank"
                               ><i class="fa-solid fa-location-dot"></i></a
                             >${streetNumber} ${streetName}
                           </div>
