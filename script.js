@@ -5,9 +5,10 @@ const list = document.getElementById("displayContact");
 const accordion = document.getElementById("accordionFlushExample");
 const spinner = document.getElementById("spinner");
 const dataList = document.getElementById("datalistOptions");
-
+const searchNotFound = document.getElementById("searchNotFound");
 let globalData = [];
 let searchData = [];
+let reserveData = [];
 const slideUnlock = () => {
   slide.remove(0);
   //   slide.setAttribute("hidden", true);
@@ -24,6 +25,7 @@ const showContact = async () => {
   globalData = await getUser();
   spinner.hidden = true;
   displayUser();
+  reserveData = [...globalData];
 };
 
 async function getUser() {
@@ -36,23 +38,13 @@ async function getUser() {
   }
 }
 
-const search = document.getElementById("txt-contactlist");
-search.addEventListener("input", (e) => {
-  searchData = globalData.filter((user) => {
-    return `${user.name.first} ${user.name.last}`
-      .toLowerCase()
-      .includes(e.target.value.toLowerCase());
-  });
-  //console.log(data);
-  displayUser();
-});
-
 const displayUser = () => {
   //  globalData = await getUser();
   //  spinner.hidden = true;
 
   let str = "";
   let dtl = "";
+  let totalContact = "";
   globalData.map((user, index) => {
     const img = user.picture.large;
     const first = user.name.first;
@@ -71,6 +63,7 @@ const displayUser = () => {
 
     // display
     str += `<div class="accordion-item">
+    
                       <h2 class="accordion-header">
                         <button
                           class="accordion-button collapsed"
@@ -134,7 +127,42 @@ const displayUser = () => {
                       </div>
                     </div>`;
   });
-  accordion.innerHTML = str;
+  totalContact = `<div class="bg-white text-dark fs-3">${globalData.length} ${globalData.length > 1 ? "Contacts" : "Contact"}</div>`;
+  accordion.innerHTML = totalContact + str;
   dataList.innerHTML = dtl;
   // console.log(str);
 };
+
+const search = document.getElementById("txt-contactlist");
+search.addEventListener("input", (e) => {
+  onSearch(e);
+});
+search.addEventListener("keydown", (e) => {
+  if (e.key === "Backspace" || e.key === "Delete") {
+    // when user press on delete or backspace key,
+    // call back function displayUSer and give all data back to global
+    globalData = [...reserveData];
+    displayUser();
+    searchNotFound.hidden = true;
+  }
+});
+
+const onSearch = (e) => {
+  globalData = globalData.filter((user) => {
+    return `${user.name.first} ${user.name.last}`
+      .toLowerCase()
+      .includes(e.target.value.toLowerCase());
+  });
+  // console.log(reserveData);
+  if (search.value === "") {
+    globalData = [...reserveData];
+    searchNotFound.hidden = true;
+  }
+  //console.log(globalData.length);
+  if (globalData.length === 0) {
+    searchNotFound.hidden = false;
+  }
+  displayUser();
+};
+
+const onDeleteCharSearch = (e) => {};
