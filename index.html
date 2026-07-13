@@ -39,13 +39,132 @@
               </div>
             </div>
             <div class="main d-flex justify-content-center pt-3" id="main">
-              <div id="contactlist" class="non-display" onclick="showContact()">
+              <!-- showing contact list button -->
+              <div id="contactlist" hidden onclick="showContact()">
                 <div
                   class="contactlist d-flex justify-content-center align-items-center"
                 >
                   <i class="fa-regular fa-address-card fa-2xl"></i>
                 </div>
                 <div>Contact</div>
+              </div>
+              <!-- showing contact list information -->
+              <div
+                class="list d-flex flex-column justify-content-space gap-3"
+                id="list"
+              >
+                <div class="search">
+                  <label
+                    for="lbl-contact"
+                    class="form-label text-dark lbl-contact"
+                    >Contacts</label
+                  >
+                  <input
+                    class="form-control"
+                    list="datalistOptions"
+                    id="txt-contactlist"
+                    placeholder="Search contact..."
+                  />
+                  <i
+                    class="fa-solid fa-magnifying-glass fa-xl"
+                    style="color: rgb(2, 18, 8)"
+                  ></i>
+                  <datalist id="datalistOptions">
+                    <option value="San Francisco"></option>
+                    <option value="New York"></option>
+                    <option value="Seattle"></option>
+                    <option value="Los Angeles"></option>
+                    <option value="Chicago"></option>
+                  </datalist>
+                </div>
+                <div
+                  class="accordion accordion-flush"
+                  id="accordionFlushExample"
+                >
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                      >
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseOne"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body">
+                        Placeholder content for this accordion, which is
+                        intended to demonstrate the
+                        <code>.accordion-flush</code> class. This is the first
+                        item’s accordion body.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseTwo"
+                      >
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body">
+                        Placeholder content for this accordion, which is
+                        intended to demonstrate the
+                        <code>.accordion-flush</code> class. This is the second
+                        item’s accordion body. Let’s imagine this being filled
+                        with some actual content.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseThree"
+                      >
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body">
+                        Placeholder content for this accordion, which is
+                        intended to demonstrate the
+                        <code>.accordion-flush</code> class. This is the third
+                        item’s accordion body. Nothing more exciting happening
+                        here in terms of content, but just filling up the space
+                        to make it look, at least at first glance, a bit more
+                        representative of how this would look in a real-world
+                        application.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div

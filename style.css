@@ -20,7 +20,7 @@ body {
   border-radius: 25px;
   color: white;
   padding-top: 2%;
-  padding-bottom: 2%;
+  /* padding-bottom: 2%; */
   position: relative;
 }
 .background {
@@ -45,8 +45,9 @@ body {
   height: 100%;
   /* background-color: gray; */
 }
-.main.active {
+.main.contact {
   background-color: gray;
+  border-radius: 0px 0px 17px 17px;
 }
 .slides {
   position: absolute;
@@ -62,6 +63,7 @@ body {
   color: purple;
   cursor: pointer;
 }
+
 .slides:hover {
   background-color: wheat;
 }
@@ -77,5 +79,24 @@ body {
   cursor: pointer;
 }
 .non-display {
-  display: none;
+  display: none !important;
+}
+.list {
+  width: 100%;
+  /* background-color: white; */
+  border-radius: 0px 0px 17px 17px;
+}
+.search {
+  padding: 0px 20px 0px 10px;
+  width: 100%;
+  position: relative;
+}
+.lbl-contact {
+  font-size: 2rem;
+}
+.search > i {
+  position: absolute;
+  left: 85%;
+  top: 10vh;
+  cursor: pointer;
 }
