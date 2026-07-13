@@ -49,120 +49,110 @@
                 <div>Contact</div>
               </div>
               <!-- showing contact list information -->
-              <div
-                class="list d-flex flex-column justify-content-space gap-3"
-                id="list"
-              >
-                <div class="search">
-                  <label
-                    for="lbl-contact"
-                    class="form-label text-dark lbl-contact"
-                    >Contacts</label
-                  >
-                  <input
-                    class="form-control"
-                    list="datalistOptions"
-                    id="txt-contactlist"
-                    placeholder="Search contact..."
-                  />
-                  <i
-                    class="fa-solid fa-magnifying-glass fa-xl"
-                    style="color: rgb(2, 18, 8)"
-                  ></i>
-                  <datalist id="datalistOptions">
-                    <option value="San Francisco"></option>
-                    <option value="New York"></option>
-                    <option value="Seattle"></option>
-                    <option value="Los Angeles"></option>
-                    <option value="Chicago"></option>
-                  </datalist>
-                </div>
+              <div id="displayContact" class="non-display">
                 <div
-                  class="accordion accordion-flush"
-                  id="accordionFlushExample"
+                  class="list d-flex flex-column justify-content-space overflow-auto"
+                  id="list"
                 >
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseOne"
-                      >
-                        Accordion Item #1
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseOne"
-                      class="accordion-collapse collapse"
-                      data-bs-parent="#accordionFlushExample"
+                  <div class="search">
+                    <label
+                      for="lbl-contact"
+                      class="form-label text-dark lbl-contact"
+                      >Contacts</label
                     >
-                      <div class="accordion-body">
-                        Placeholder content for this accordion, which is
-                        intended to demonstrate the
-                        <code>.accordion-flush</code> class. This is the first
-                        item’s accordion body.
-                      </div>
-                    </div>
+                    <input
+                      class="form-control"
+                      list="datalistOptions"
+                      id="txt-contactlist"
+                      placeholder="Search contact..."
+                    />
+                    <i
+                      class="fa-solid fa-magnifying-glass fa-xl"
+                      style="color: rgb(2, 18, 8)"
+                    ></i>
+                    <datalist id="datalistOptions">
+                      <option value="San Francisco"></option>
+                      <option value="New York"></option>
+                      <option value="Seattle"></option>
+                      <option value="Los Angeles"></option>
+                      <option value="Chicago"></option>
+                    </datalist>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseTwo"
-                      >
-                        Accordion Item #2
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseTwo"
-                      class="accordion-collapse collapse"
-                      data-bs-parent="#accordionFlushExample"
+                  <div
+                    class="spinner-border text-primary"
+                    role="status"
+                    id="spinner"
+                  >
+                    <span
+                      class="visually-hidden d-flex justify-content-center align-items-center"
+                      >Loading...</span
                     >
-                      <div class="accordion-body">
-                        Placeholder content for this accordion, which is
-                        intended to demonstrate the
-                        <code>.accordion-flush</code> class. This is the second
-                        item’s accordion body. Let’s imagine this being filled
-                        with some actual content.
-                      </div>
-                    </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseThree"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseThree"
+                  <div
+                    class="accordion accordion-flush user-role"
+                    id="accordionFlushExample"
+                  >
+                    <!-- <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseOne"
+                        >
+                          <span
+                            class="user d-flex justify-content-between gap-3"
+                          >
+                            <img
+                              class="img-thumnail"
+                              src="https://randomuser.me/api/portraits/women/45.jpg"
+                              alt=""
+                            />
+                            <span>
+                              <h5>Begümss Çatalbaş</h5>
+                              <span
+                                >9622 Şehitler Cd, Karabük, Van 37655
+                                Turkey</span
+                              >
+                            </span>
+                          </span>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseOne"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"
                       >
-                        Accordion Item #3
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseThree"
-                      class="accordion-collapse collapse"
-                      data-bs-parent="#accordionFlushExample"
-                    >
-                      <div class="accordion-body">
-                        Placeholder content for this accordion, which is
-                        intended to demonstrate the
-                        <code>.accordion-flush</code> class. This is the third
-                        item’s accordion body. Nothing more exciting happening
-                        here in terms of content, but just filling up the space
-                        to make it look, at least at first glance, a bit more
-                        representative of how this would look in a real-world
-                        application.
+                        <div
+                          class="accordion-body d-flex flex-column justify-content-center align-items-center"
+                        >
+                          <img
+                            class="img-thumnail-lg"
+                            src="https://randomuser.me/api/portraits/women/45.jpg"
+                            alt=""
+                          />
+                          <div>
+                            <i class="fa-solid fa-circle-user"></i> Begüm
+                            Çatalbaş
+                          </div>
+                          <div>
+                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+                            (764)-596-9285
+                          </div>
+                          <div>
+                            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                            begum.catalbas@example.com
+                          </div>
+                          <div>
+                            <a href="#"
+                              ><i class="fa-solid fa-location-dot"></i></a
+                            >9622 Şehitler Cd
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>

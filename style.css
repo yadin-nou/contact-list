@@ -85,6 +85,7 @@ body {
   width: 100%;
   /* background-color: white; */
   border-radius: 0px 0px 17px 17px;
+  height: 610px;
 }
 .search {
   padding: 0px 20px 0px 10px;
@@ -99,4 +100,23 @@ body {
   left: 85%;
   top: 10vh;
   cursor: pointer;
+}
+.img-thumnail {
+  width: 190px;
+  border-radius: 50%;
+}
+.img-thumnail-lg {
+  width: 150px;
+  border-radius: 50%;
+  height: 150px;
+  align-self: center;
+}
+a i {
+  color: black;
+}
+.user-role {
+  margin-top: 10px;
+}
+.user-detail {
+  width: 400px;
 }
