@@ -6,16 +6,28 @@ const accordion = document.getElementById("accordionFlushExample");
 const spinner = document.getElementById("spinner");
 const dataList = document.getElementById("datalistOptions");
 const searchNotFound = document.getElementById("searchNotFound");
+const range = document.getElementById("range");
 let globalData = [];
 let searchData = [];
 let reserveData = [];
 
-const slideUnlock = () => {
-  slide.remove(0);
-  //   slide.setAttribute("hidden", true);
-  mobileLayout.classList.add("contact");
-  contactList.removeAttribute("hidden");
-};
+range.addEventListener("change", (e) => {
+  if (e.target.value === "100") {
+    slide.remove(0);
+    //   slide.setAttribute("hidden", true);
+    mobileLayout.classList.add("contact");
+    contactList.removeAttribute("hidden");
+  } else {
+    range.value = 0;
+  }
+});
+
+// const slideUnlock = () => {
+//   slide.remove(0);
+//   //   slide.setAttribute("hidden", true);
+//   mobileLayout.classList.add("contact");
+//   contactList.removeAttribute("hidden");
+// };
 
 const showContact = async () => {
   //alert("show content");
