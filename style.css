@@ -83,9 +83,13 @@ body {
 }
 .list {
   width: 100%;
+  padding: 0px 2px;
   /* background-color: white; */
   border-radius: 0px 0px 17px 17px;
   height: 610px;
+}
+#displayContact {
+  min-width: 100%;
 }
 .search {
   padding: 0px 20px 0px 10px;
@@ -119,4 +123,10 @@ a i {
 }
 .user-detail {
   width: 400px;
+}
+
+@media (min-width: 375px) {
+  .list {
+    min-width: 150px;
+  }
 }
