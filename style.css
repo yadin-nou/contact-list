@@ -74,6 +74,9 @@ body {
   border-radius: 10px;
   color: red;
 }
+.contact-icon {
+  left: 42.5%;
+}
 #contactlist {
   cursor: pointer;
 }
