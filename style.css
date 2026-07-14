@@ -10,8 +10,7 @@ body {
   background-position: center;
   min-height: 100vh;
 }
-.wrapper {
-}
+
 .mobile-layout {
   width: 100%;
   max-width: 400px;
@@ -62,6 +61,7 @@ body {
 .slides > *:hover {
   color: purple;
   cursor: pointer;
+  transform: translateX(20px);
 }
 
 .slides:hover {

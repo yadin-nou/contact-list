@@ -9,6 +9,7 @@ const searchNotFound = document.getElementById("searchNotFound");
 let globalData = [];
 let searchData = [];
 let reserveData = [];
+
 const slideUnlock = () => {
   slide.remove(0);
   //   slide.setAttribute("hidden", true);
