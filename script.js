@@ -128,7 +128,7 @@ const displayUser = () => {
                       </div>
                     </div>`;
   });
-  totalContact = `<div class="bg-white text-dark fs-3">${globalData.length} ${globalData.length > 1 ? "Contacts" : "Contact"}</div>`;
+  totalContact = `<div class="bg-white text-dark fs-3">${globalData.length} ${globalData.length > 1 ? "Contacts" : "Contact"} </div>`;
   accordion.innerHTML = totalContact + str;
   dataList.innerHTML = dtl;
   // console.log(str);

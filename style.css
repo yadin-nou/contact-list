@@ -3,14 +3,13 @@
 }
 body {
   margin: 0;
-  height: 100%;
+}
+.wrapper {
   background-image: url("./assists/images/mobile-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
 }
-
 .mobile-layout {
   width: 100%;
   max-width: 400px;
