@@ -1,3 +1,8 @@
+:root {
+  --track-h: 54px;
+  --thumb-size: 46px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -59,14 +64,77 @@ body {
 }
 .slides > *:hover {
   color: purple;
-  cursor: pointer;
-  transform: translateX(20px);
+  /* cursor: pointer; */
+  /* transform: translateX(20px); */
 }
 
 .slides:hover {
   background-color: wheat;
 }
-
+/* range track no oppearance and style */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: grabbing;
+}
+/* Chrome, Safari, Edge (Chromium) for thumb slide */
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(rgba(48, 53, 202, 0.637), rgba(88, 2, 2, 0.69));
+}
+/* Firefork */
+.range::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(rgba(48, 58, 202, 0.637), rgba(88, 2, 2, 0.69));
+}
+.slideShake {
+}
+.fa-chevron-right {
+  left: 5%;
+  animation: icons 1.5s infinite linear;
+}
+@keyframes icons {
+  0% {
+    left: 3%;
+  }
+  100% {
+    left: 6%;
+  }
+}
+.slider-text {
+  top: 50%;
+  left: 50%;
+  /* It is often combined with top: 50% and left: 50% 
+  to perfectly center an element. it is used for position absolute only*/
+  transform: translate(-50%, -50%);
+  /* make disable text to select from browser */
+  pointer-events: none;
+  animation: shake 1.5s infinite linear;
+}
+@keyframes shake {
+  0% {
+    top: 15%;
+    left: 50%;
+    transform: translate(-50px);
+    color: black;
+  }
+  100% {
+    top: 15%;
+    left: 53%;
+    transform: translate(-50px);
+    color: rgb(199, 12, 62);
+  }
+}
 .contactlist {
   background-color: white;
   width: 50px;

@@ -160,7 +160,7 @@
                 </div>
               </div>
             </div>
-            <div
+            <!-- <div
               class="slides d-flex justify-content-center gap-4 align-items-center"
               id="slide"
               onclick="slideUnlock()"
@@ -168,6 +168,26 @@
               <div class="slideShake">
                 <i class="fa-solid fa-chevron-right"></i>
                 <span>Slide to unlock</span>
+              </div>
+            </div> -->
+            <div
+              class="slides d-flex justify-content-center gap-4 align-items-center"
+              id="slide"
+            >
+              <div
+                class="slideShake d-flex justify-content-center align-items-center positin-relative"
+              >
+                <i class="fa-solid fa-chevron-right position-absolute"></i>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                  class="range position-absolute"
+                />
+                <span class="slider-text position-absolute fs-4"
+                  >slide to unlock</span
+                >
               </div>
             </div>
           </div>
