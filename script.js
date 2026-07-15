@@ -90,18 +90,18 @@ const displayUser = () => {
                             class="user d-flex justify-content-between gap-3"
                           >
                             <img
-                              class="img-thumnail"
+                              class="rounded-circle"
                               src="${img}"
                               alt=""
                             />
                             <span>
                               <h5>${first} ${last}</h5>
-                              <span
+                              <small
                                 >
                                 ${streetNumber} ${streetName} ,
                                  ${city} , ${state}  
                                  ${postcode} ${country} 
-                                 </span
+                                 </small
                               >
                             </span>
                           </span>
@@ -116,25 +116,24 @@ const displayUser = () => {
                           class="accordion-body d-flex flex-column justify-content-center align-items-start "
                         >
                           <img
-                            class="img-thumnail-lg"
+                            class="rounded-circle align-self-center"
                             src="${img}"
                             alt=""
                           />
-                          <div>
+                          <div class="fw-bolder">
                             <i class="fa-solid fa-circle-user"></i> ${first} ${last}
                           </div>
                           <div>
-                            <a href="tel:${phone}"><i class="fa-solid fa-phone"></i></a>
-                            ${phone}
+                            <a href="tel:${phone}"><i class="fa-solid fa-phone"></i>
+                            ${phone}</a>
                           </div>
                           <div>
-                            <a href="mailto:${email}"><i class="fa-solid fa-envelope"></i></a>
-                            ${email}
-                          </div>
+                            <a href="mailto:${email}"><i class="fa-solid fa-envelope"></i>
+                            ${email}</a>
                           <div>
-                            <a href="https://www.google.com/maps?q=${user.location.coordinates.latitude},${user.location.coordinates.longitude}" target="_blank"
-                              ><i class="fa-solid fa-location-dot"></i></a
-                            >${streetNumber} ${streetName}
+                            <a href="https://www.google.com/maps/place/${streetName}+St,+${city}+${state}/" target="_blank"
+                              ><i class="fa-solid fa-location-dot"></i>
+                            ${streetNumber} ${streetName}</a>
                           </div>
                         </div>
                       </div>
