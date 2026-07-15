@@ -5,11 +5,11 @@ const list = document.getElementById("displayContact");
 const accordion = document.getElementById("accordionFlushExample");
 const spinner = document.getElementById("spinner");
 const dataList = document.getElementById("datalistOptions");
-const searchNotFound = document.getElementById("searchNotFound");
+// const searchNotFound = document.getElementById("searchNotFound");
 const range = document.getElementById("range");
 let globalData = [];
 let searchData = [];
-let reserveData = [];
+//let reserveData = [];
 
 range.addEventListener("change", (e) => {
   if (e.target.value === "100") {
@@ -37,21 +37,38 @@ const showContact = async () => {
   //console.log(getUser());
   globalData = await getUser();
   spinner.hidden = true;
-  displayUser();
-  reserveData = [...globalData];
+  displayUser(globalData);
+  // reserveData = [...globalData];
 };
 
 async function getUser() {
   try {
+    //fetch data, if you await, fucntion have to be async
     const response = await fetch("https://randomuser.me/api/?results=6");
+    //convert to json and assing to data
     const data = await response.json();
+    //recived data now
     return data.results;
   } catch (error) {
     console.error(error);
   }
+  // OR
+  //fetch the user without async and await
+  //promise method
+  // fetch("https://randomuser.me/api/?results=6")
+  //   .then((response) => {
+  //     //this return to data below
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     return data;
+  //   })
+  //   .catch((e) => {
+  //     console.log(e);
+  //   });
 }
 
-const displayUser = () => {
+const displayUser = (globalData) => {
   //  globalData = await getUser();
   //  spinner.hidden = true;
 
@@ -146,35 +163,33 @@ const displayUser = () => {
 };
 
 const search = document.getElementById("txt-contactlist");
-search.addEventListener("input", (e) => {
+search.addEventListener("keyup", (e) => {
   onSearch(e);
 });
-search.addEventListener("keydown", (e) => {
-  if (e.key === "Backspace" || e.key === "Delete") {
-    // when user press on delete or backspace key,
-    // call back function displayUSer and give all data back to global
-    globalData = [...reserveData];
-    displayUser();
-    searchNotFound.hidden = true;
-  }
-});
+// search.addEventListener("keydown", (e) => {
+//   if (e.key === "Backspace" || e.key === "Delete") {
+//     // when user press on delete or backspace key,
+//     // call back function displayUSer and give all data back to global
+//     globalData = [...reserveData];
+//     displayUser();
+//     searchNotFound.hidden = true;
+//   }
+// });
 
 const onSearch = (e) => {
-  globalData = globalData.filter((user) => {
+  searchData = globalData.filter((user) => {
     return `${user.name.first} ${user.name.last}`
       .toLowerCase()
       .includes(e.target.value.toLowerCase());
   });
   // console.log(reserveData);
-  if (search.value === "") {
-    globalData = [...reserveData];
-    searchNotFound.hidden = true;
-  }
+  // if (search.value === "") {
+  //   globalData = [...reserveData];
+  //   searchNotFound.hidden = true;
+  // }
   //console.log(globalData.length);
-  if (globalData.length === 0) {
-    searchNotFound.hidden = false;
-  }
-  displayUser();
+  // if (searchData.length === "") {
+  //   searchNotFound.hidden = false;
+  // }
+  displayUser(searchData);
 };
-
-const onDeleteCharSearch = (e) => {};
